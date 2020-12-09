@@ -1,4 +1,3 @@
-
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -23,20 +22,20 @@ function setup() {
 
 	//Create the Bodies Here.
 	roof=new Roof(400,100,500,40);
-	bob1=new Bob(300,308,51);
-	bob2=new Bob(250,300,51);
-	bob3=new Bob(350,300,51);
-	bob4=new Bob(450,300,51);
-	bob5=new Bob(500,285,51);
-	rope1=new Rope(bob1.body,roof.body,-50*2,0);
-	rope2=new Rope(bob2.body,roof.body,-100*2,0);
-	rope3=new Rope(bob3.body,roof.body,0*2,0);
-	rope4=new Rope(bob4.body,roof.body,50*2,0);
-	rope5=new Rope(bob5.body,roof.body,100*2,0);
+	bob1=new Bob(300,300,25);
+	bob2=new Bob(250,300,25);
+	bob3=new Bob(350,300,25);
+	bob4=new Bob(450,305,25);
+	bob5=new Bob(500,305,25);
+	rope1=new Rope(bob2.body,roof.body,-100,0);
+	rope2=new Rope(bob1.body,roof.body,-50,0);
+	rope3=new Rope(bob3.body,roof.body,0,0);
+	rope4=new Rope(bob4.body,roof.body,50,0);
+	rope5=new Rope(bob5.body,roof.body,100,0);
 
 
 	Engine.run(engine);
-  
+   
 }
 
 
@@ -57,13 +56,16 @@ function draw() {
   bob4.display();
   bob5.display();
 
-   keyPressed();
+
+
+
 }
 
 
 	function keyPressed() { 
 	if (keyCode === LEFT_ARROW) {
-		 Matter.Body.applyForce(bob2.body,bob2.body.position,{x:-100,y:10});
+		 Matter.Body.applyForce(bob2.body,bob2.body.position,{x:-100,y:-50});
 	 } 
 	} 
+
 
